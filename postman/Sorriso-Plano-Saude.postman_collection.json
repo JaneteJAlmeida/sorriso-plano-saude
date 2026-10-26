@@ -1,0 +1,130 @@
+{
+  "info": {
+    "nome": "Sorriso Plano de Saúde API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "usernome",
+        "value": "sorriso",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "sorriso123",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "beneficiarioUrl",
+      "value": "http://localhost:8081"
+    },
+    {
+      "key": "documentoUrl",
+      "value": "http://localhost:8082"
+    }
+  ],
+  "item": [
+    {
+      "nome": "Beneficiários",
+      "item": [
+        {
+          "nome": "Cadastrar beneficiário",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"nome\":\"Maria Silva\",\"telefone\":\"73999990000\",\"email\":\"maria@example.com\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{beneficiarioUrl}}/api/beneficiaries"
+          }
+        },
+        {
+          "nome": "Listar beneficiários",
+          "request": {
+            "method": "GET",
+            "url": "{{beneficiarioUrl}}/api/beneficiaries"
+          }
+        },
+        {
+          "nome": "Atualizar beneficiário ID 1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"nome\":\"Maria Silva Atualizada\",\"telefone\":\"73999990000\",\"email\":\"maria@example.com\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{beneficiarioUrl}}/api/beneficiaries/1"
+          }
+        },
+        {
+          "nome": "Remover beneficiário ID 1",
+          "request": {
+            "method": "DELETE",
+            "url": "{{beneficiarioUrl}}/api/beneficiaries/1"
+          }
+        }
+      ]
+    },
+    {
+      "nome": "Documentoos",
+      "item": [
+        {
+          "nome": "Cadastrar documentoo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"beneficiarioId\":1,\"documentoType\":\"CPF\",\"documentoNumber\":\"12345678900\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{documentoUrl}}/api/documentoos"
+          }
+        },
+        {
+          "nome": "Listar documentoos do beneficiário ID 1",
+          "request": {
+            "method": "GET",
+            "url": "{{documentoUrl}}/api/documentoos/beneficiario/1"
+          }
+        }
+      ]
+    }
+  ]
+}
