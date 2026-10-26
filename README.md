@@ -31,22 +31,12 @@ mvn clean verify
 - `GET /api/beneficiaries` — listar todos
 - `GET /api/beneficiaries/{id}` — obter por ID
 - `PUT /api/beneficiaries/{id}` — atualizar cadastro
-- `DELETE /api/beneficiaries/{id}` — remover
-
-Exemplo:
-```json
-{"nome":"Maria Silva","telefone":"73999990000","email":"maria@example.com"}
-```
 
 ## Endpoints — documentoo-service (8082)
 - `POST /api/documentoos` — cadastrar documentoo
 - `GET /api/documentoos/beneficiario/{beneficiarioId}` — listar documentoos do beneficiário
 - `DELETE /api/documentoos/{id}` — remover documentoo
 
-Exemplo:
-```json
-{"beneficiarioId":1,"documentoType":"CPF","documentoNumber":"12345678900"}
-```
 
 ## Postman
 Importe `postman/Sorriso-Plano-Saude.postman_collection.json`. A coleção inclui chamadas principais para os dois serviços; autenticação configurada como Basic Auth.
