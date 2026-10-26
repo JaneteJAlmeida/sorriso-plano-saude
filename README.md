@@ -9,7 +9,6 @@ Projeto baseado na avaliação anexada: cadastro de beneficiários, documentoos,
 - Pacotes organizados por feature (`beneficiario`, `documento`) com camadas controller/service/repository/dto.
 - Swagger: `/swagger-ui.html`; OpenAPI: `/v3/api-docs`.
 
-> Para manter o escopo executável e fácil de estender, os serviços estão desacoplados por API REST. O cadastro de documentoos é feito diretamente no documentoo-service. Uma próxima evolução recomendada é adicionar gateway e comunicação orquestrada para criação de beneficiário + documentoos em uma única operação distribuída.
 
 ## Requisitos
 - JDK 17
@@ -29,7 +28,6 @@ mvn clean verify
 ## Credenciais de desenvolvimento
 - usuário: `sorriso`
 - senha: `sorriso123`
-Altere as credenciais antes de qualquer uso fora do ambiente local.
 
 ## Endpoints — beneficiario-service (8081)
 - `POST /api/beneficiaries` — cadastrar beneficiário
@@ -60,6 +58,3 @@ Importe `postman/Sorriso-Plano-Saude.postman_collection.json`. A coleção inclu
 - Beneficiários: `http://localhost:8081/h2-console`
 - Documentoos: `http://localhost:8082/h2-console`
 - JDBC URLs: `jdbc:h2:mem:beneficiariodb` e `jdbc:h2:mem:documentodb`.
-
-## Observações
-Os campos do diagrama da avaliação não estavam legíveis/disponíveis no texto extraído do PDF. Por isso, o modelo inicial usa `nome`, `telefone`, `email` para beneficiário e `beneficiarioId`, `documentoType`, `documentoNumber` para documentoo. Ajuste os atributos conforme o diagrama original, se necessário.
