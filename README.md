@@ -1,7 +1,4 @@
 # Sorriso Plano de Saúde — API REST
-
-Projeto baseado na avaliação anexada: cadastro de beneficiários, documentoos, listagem, atualização, exclusão, banco relacional, Swagger e instruções de build. Foram adicionados Spring Data JPA, Spring Security, testes JUnit/Mockito, Postman e separação em microserviços/feature packages.
-
 ## Arquitetura
 - `beneficiario-service` (porta 8081): cadastro e consulta de beneficiários.
 - `documentoo-service` (porta 8082): cadastro e consulta de documentoos associados a um `beneficiarioId`.
